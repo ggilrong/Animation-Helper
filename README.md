@@ -4,12 +4,11 @@
 Usage
 -----
 ```java
-AnimationHelper.move(AnimationHelper.Direction.TOP, view, 2000);
+AnimationHelper.move(AnimationHelper.Direction.TOP, view);
 
-AnimationHelper.move(AnimationHelper.Direction.BOTTOM, view);
+AnimationHelper.move(AnimationHelper.Direction.BOTTOM, view, 1000, 0);
 
-AnimationHelper.move(AnimationHelper.Direction.RIGHT, view, new Animator.AnimatorListener()
-{
+AnimationHelper.move(AnimationHelper.Direction.RIGHT, mViewPager, 1000, 0, new Animator.AnimatorListener() {
     @Override
     public void onAnimationStart(Animator animation)
     {
