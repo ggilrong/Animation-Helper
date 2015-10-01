@@ -1,5 +1,5 @@
 # Animation-Helper
-![ScreenShot](https://raw.githubusercontent.com/ggilrong/Animation-Helper//master/screenshot.gif)
+![ScreenShot](https://raw.githubusercontent.com/ggilrong/Animation-Helper/master/screenshot.gif)
 
 Usage
 -----
