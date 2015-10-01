@@ -19,16 +19,8 @@ public class AnimationHelper
         move(direction, view, DEFAULT_DURATION, DEFAULT_DELAY, new SimpleAnimatorListener());
     }
 
-    public static <T extends View> void move(Direction direction, T view, Animator.AnimatorListener animatorListener) {
-        move(direction, view, DEFAULT_DURATION, DEFAULT_DELAY, animatorListener);
-    }
-
-    public static <T extends View> void move(Direction direction, T view, long delay) {
-        move(direction, view, DEFAULT_DURATION, delay, new SimpleAnimatorListener());
-    }
-
-    public static <T extends View> void move(Direction direction, T view, long delay, Animator.AnimatorListener animatorListener) {
-        move(direction, view, DEFAULT_DURATION, delay, animatorListener);
+    public static <T extends View> void move(Direction direction, T view, long duration, long delay) {
+        move(direction, view, duration, delay, new SimpleAnimatorListener());
     }
 
     public static synchronized <T extends View> void move(final Direction direction, final T view, final long duration, long delay, final Animator.AnimatorListener animatorListener) {
@@ -60,7 +52,7 @@ public class AnimationHelper
         }, delay);
     }
 
-    static class SimpleAnimatorListener implements Animator.AnimatorListener
+    public static class SimpleAnimatorListener implements Animator.AnimatorListener
     {
 
         @Override
