@@ -1,4 +1,6 @@
 # Animation-Helper
+v 0.0.1
+
 ![ScreenShot](https://raw.githubusercontent.com/ggilrong/Animation-Helper/master/screenshot.gif)
 
 Usage
