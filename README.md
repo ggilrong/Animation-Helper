@@ -1,40 +1,38 @@
 # Animation-Helper
-Animation Helper
-============================
 
 Usage
 -----
 ```java
-        AnimationHelper.move(AnimationHelper.Direction.TOP, view, 2000);
+AnimationHelper.move(AnimationHelper.Direction.TOP, view, 2000);
+
+AnimationHelper.move(AnimationHelper.Direction.BOTTOM, view);
+
+AnimationHelper.move(AnimationHelper.Direction.RIGHT, view, new Animator.AnimatorListener()
+{
+    @Override
+    public void onAnimationStart(Animator animation)
+    {
         
-        AnimationHelper.move(AnimationHelper.Direction.BOTTOM, view);
-        
-        AnimationHelper.move(AnimationHelper.Direction.RIGHT, view, new Animator.AnimatorListener()
-        {
-            @Override
-            public void onAnimationStart(Animator animation)
-            {
-                
-            }
+    }
 
-            @Override
-            public void onAnimationEnd(Animator animation)
-            {
+    @Override
+    public void onAnimationEnd(Animator animation)
+    {
 
-            }
+    }
 
-            @Override
-            public void onAnimationCancel(Animator animation)
-            {
+    @Override
+    public void onAnimationCancel(Animator animation)
+    {
 
-            }
+    }
 
-            @Override
-            public void onAnimationRepeat(Animator animation)
-            {
+    @Override
+    public void onAnimationRepeat(Animator animation)
+    {
 
-            }
-        });
+    }
+});
 
 ```
 
