@@ -1,5 +1,6 @@
 package com.github.ggilrong.library.animationhelper;
 
+import android.animation.Animator;
 import android.view.View;
 
 public class AnimationHelper
@@ -15,14 +16,22 @@ public class AnimationHelper
     private static final long DEFAULT_DELAY = 0;
 
     public static <T extends View> void move(Direction direction, T view) {
-        move(direction, view, DEFAULT_DURATION, DEFAULT_DELAY);
+        move(direction, view, DEFAULT_DURATION, DEFAULT_DELAY, new SimpleAnimatorListener());
+    }
+
+    public static <T extends View> void move(Direction direction, T view, Animator.AnimatorListener animatorListener) {
+        move(direction, view, DEFAULT_DURATION, DEFAULT_DELAY, animatorListener);
     }
 
     public static <T extends View> void move(Direction direction, T view, long delay) {
-        move(direction, view, DEFAULT_DURATION, delay);
+        move(direction, view, DEFAULT_DURATION, delay, new SimpleAnimatorListener());
     }
 
-    public static synchronized <T extends View> void move(final Direction direction, final T view, final long duration, long delay) {
+    public static <T extends View> void move(Direction direction, T view, long delay, Animator.AnimatorListener animatorListener) {
+        move(direction, view, DEFAULT_DURATION, delay, animatorListener);
+    }
+
+    public static synchronized <T extends View> void move(final Direction direction, final T view, final long duration, long delay, final Animator.AnimatorListener animatorListener) {
 
         view.postDelayed(new Runnable()
         {
@@ -35,19 +44,47 @@ public class AnimationHelper
                 switch(direction)
                 {
                     case LEFT:
-                        view.animate().translationX(-width).setDuration(duration);
+                        view.animate().translationX(-width).setDuration(duration).setListener(animatorListener);
                         break;
                     case TOP:
-                        view.animate().translationY(-height).setDuration(duration);
+                        view.animate().translationY(-height).setDuration(duration).setListener(animatorListener);
                         break;
                     case RIGHT:
-                        view.animate().translationX(width).setDuration(duration);
+                        view.animate().translationX(width).setDuration(duration).setListener(animatorListener);
                         break;
                     case BOTTOM:
-                        view.animate().translationY(height).setDuration(duration);
+                        view.animate().translationY(height).setDuration(duration).setListener(animatorListener);
                         break;
                 }
             }
         }, delay);
+    }
+
+    static class SimpleAnimatorListener implements Animator.AnimatorListener
+    {
+
+        @Override
+        public void onAnimationStart(Animator animation)
+        {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation)
+        {
+
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation)
+        {
+
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation)
+        {
+
+        }
     }
 }
