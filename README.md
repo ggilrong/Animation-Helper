@@ -39,7 +39,7 @@ AnimationHelper.move(AnimationHelper.Direction.RIGHT, mViewPager, 1000, 0, new A
 License
 ---------
 
-```xml
+```
 The MIT License (MIT)
 
 Copyright (c) 2015 ggilrong
